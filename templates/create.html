@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container comment">
+        <div class="row">
+            <div class="dispaly-txt" style="margin-left: 10px;">
+                <p>Comments</p>
+                <p style="font-size: 25px;">Leave your comment on satisfactory level of our services</p>
+            </div> 
+        </div>
+    </div>
+
+    <div class="container mt-5" style="color: black;">
+        <div class="col-md-8">
+            <p style="font-size: 25px;">Comment On Our Services</p>
+            <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <p class="comm">{{form.as_p}}</p>
+               <input type="submit" value="submit">
+        </div>
+        <br>
+        <br>
+
+        
+        {% for item in comment %}
+            <p>{{ item.author.username }}</p>
+            <p>{{ item.comment }}</p>
+        {% endfor %}
+            
+        
+    </div>
+{% endblock %}
+    

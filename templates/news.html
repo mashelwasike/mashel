@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container-flood news-center">
+        <div class="row">
+            <h2 class="dispaly-txt">News Center</h2>
+        </div>
+    </div>
+
+    <div class="container mt-5" style="color: black;">
+        <div class="col-md-8">
+            <h2>News</h2>
+            <br>
+        <p><strong>Welcome To our news center and get the latest updates</strong></p>
+        </div>
+        <br>
+        <div class="container">
+            {% for new in news  %}
+            <div class="col-md-9">
+                <div class="news"></div>
+                <p><strong>{{ new.title }}</strong></p>
+                <p class="news-body">{{ new.body }}</p>
+                <p>{{ new.date }}</p>
+            </div>
+        {% endfor %}
+        </div>
+        
+    </div>
+{% endblock %}
+    

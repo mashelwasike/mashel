@@ -1,0 +1,45 @@
+    {% extends 'main.html' %}
+    {% load static %}
+
+    {% block content %}
+
+    <div class="container about mt-3">
+        <div class="row">   
+            
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <h2 style="color: green;font-weight: bold;">EXELLENT PROJECTS UNDER IBEN</h2>
+            <br>
+            <br>
+            <div class="col-md-7 prod-product">
+            <p>
+                Iben International has consistently demonstrated excellence in the construction industry through their successful completion of notable projects. One standout example is the [Project Name], located in [Location]. This large-scale undertaking showcased Iben International's expertise in managing complex projects from conception to completion. The project, spanning [square footage], was completed within the stipulated timeline, highlighting the company's efficient project management capabilities.
+                <br>
+                <br>
+                The success of the [Project Name] can be attributed to Iben International's innovative approach, utilizing cutting-edge technologies and sustainable practices. The project team, comprised of experienced professionals, effectively navigated challenges while maintaining a commitment to quality and safety standards. Client satisfaction was paramount, resulting in positive testimonials and recognition for Iben International's outstanding work. This project not only showcased the company's construction prowess but also contributed positively to the local community, reflecting Iben International's commitment to excellence, sustainability, and client satisfaction in the construction industry.
+            </p>
+        </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+    <div class="row">
+        <div class="container">
+        <h4><strong>PROJECTS</strong></h4>
+        {% for item in products %}
+        <div class="col-md-3">
+            <div class="single-pro">
+                <a href="{% url 'productview' item.category.slug item.slug %}">
+                    <p><strong>{{ item.name }} ></strong></p>
+                </a>     
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+    </div>
+
+    {% endblock %}

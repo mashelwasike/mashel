@@ -1,0 +1,128 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container-fluid service">
+    <div class="row">
+        <h2 class="dispaly-txt">Our Services</h2>
+    </div>
+</div>
+
+<div class="container-fluid project mt-5">
+    <div class="row">
+        <div class="project1">
+            <div class="head">
+                <h4 class="text-center"><strong>SPECIALIZATION:</strong></h4>
+            </div>
+        </div>
+        <div class="project2">
+            <div class="special">
+            <div class="col-md-12">
+                <h5><strong>Architectural Drawings</strong></h5>
+                <p>We create unique and functional building designs just
+                for you.</p>
+                <button class="sign"><a href="{% url 'category' %}">Check out</a></button>
+                <br>
+                <br>
+                <h5><strong>Preparing Professional Plans</strong></h5>
+                <p>We make detailed plans to ensure your project
+                    starts off right.</p>
+                <h5><strong>Structural Designs and analysis</strong></h5>
+                <p>We create unique and functional building designs just
+                for you.</p>
+                
+            </div>
+        </div>  
+        </div>
+
+        <div class="project3">
+            <div class="special">
+            <div class="col-md-12">
+                <h5><strong>Construction works</strong></h5>
+                <p>We build with skills, turning designs into reality with
+                    attention to details.</p>
+
+                <h5><strong>Consultation services</strong></h5>
+                <p>Get guidance and solutions from our experts throughout
+                    your project
+                    </p>
+
+                <h5><strong>Site Inspections</strong></h5>
+                <p>We conduct thorough site inspections to ensure compliance
+                    and safety at every stage of the construction process.</p>
+                
+            </div>
+        </div>
+        </div>
+
+        <div class="project4">
+            <div class="special">
+            <div class="col-md-12">
+                <h5><strong>Supply of building materials</strong></h5>
+                <p>Sourcing and delivering quality building materials
+                to meet project specifications.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-flood services mt-5" >
+    <div class="nums">
+        <div class="no-1">
+            <div class="text">
+                <h3 class="text-center">Join Our Network</h3>
+                <p class="text-center serv-txt">Get notified of open positions that match your interests and see what it’s like to work with us.</p>
+            </div>
+        </div>
+        <div class="no-2 text-center">
+            <div class="text">
+                <h3 class="text-center">Join Our Network</h3>
+                <p class="text-center serv-txt">Join Our Network to Get immediate news, We will update you on our every current events</p>
+                <br>
+                <button class="sign"><a href="{% url 'signup' %}">Sign Up</a></button>
+            </div>
+        </div>
+        <div class="no-3">
+            <div class="text">
+                <h3 class="text-center">Join Our Network</h3>
+                <p class="text-center serv-txt">Join Our Network to Get immediate news, We will update you on our every current events</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-flui serve mt-5">
+    <div class="serv1">
+            <div class="text2">
+                <h3>Building tomorrow - today</h3>
+                <p>From flexible work options that help you balance the demands of work and life, to learning and growth programs that advance your career and the potential of working on projects around the world, the opportunities with us are virtually limitless. Working within a global community of technical experts and professionals, you can create relationships that support your development and a career path that fits your goals.</p>
+         </div>
+    </div>
+    <div class="serve2">
+        <img src="{% static 'rem.jpg' %}" alt="">
+    </div>
+</div>
+
+
+
+<div class="container-fluid mt-5 comm">
+    <div class="row">
+        {% for item in comment %}
+        <div class="col-md-3">     
+        <div class="card text-left mt-3 mb-3 comm1">
+            <div class="card-body">
+                <p><strong>{{ item.author.username }}</strong></p>
+                <p><strong>{{ item.comment }}</strong></p>
+                <p>{{ item.date }}</p>
+            </div>
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
+    

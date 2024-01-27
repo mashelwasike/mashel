@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+{% include 'subheader.html' %}
+
+    <div class="container-fluid leadership">
+        <div class="row">
+          <h3 class="dispaly-txt">OUR LEADERSHIP</h3>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class="row">
+        <h3><strong>Stakeholders</strong></h3>
+      {% for leader in leader  %}
+        <div class="col-md-8">
+          <div class="card leaders" style="border: none;">
+            <div class="card-body">
+              <img src="{{ leader.image.url }}" alt="">
+              <h5><strong>{{ leader.title }}</strong></h5> 
+              <p><strong>{{leader.f_name}}</strong></p>
+              <div class="lead">
+                <p>{{ leader.description }}</p>
+              </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      {% endfor %}
+          
+        
+  </div>
+  </div>
+
+
+{% endblock %}
+    

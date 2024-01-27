@@ -1,0 +1,107 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-12">
+    {% include 'sliders.html' %}
+</div>
+
+<div class="container-fluid intro mt-4">
+    <div class="row">
+        <div class="col-md-7">
+          <div class="intro1">
+            <h4>We are all about creating a better future, one foundation at a time – we
+                combine top notch quality with being eco friendly, and innovation paves the way
+                for cost-effective services in the Engineering field. Welcome to a new era of
+                construction with IBEN INTERNATIONAL.</h4>
+          </div>
+        </div>
+        <div class="col-md-5 update">
+              <div class="updates1">
+                <h6 class="text-center">
+                  <strong>Updates</strong> 
+                </h6>
+                {% for item in trending %}
+                    <p><strong>{{ item.title }}</strong></p>
+                    <p>{{ item.body }}</p>
+                    <p>{{ item.date }}</p>
+                  {% endfor %}
+              </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5">
+    <div class="row home-proj" style="background: none;">
+        <div class="home-proj1">
+          <h5 class="text-center">OUR RECENT AND ONGOING PROJECTS</h5>
+        </div>
+
+        <div class="home-proj2" style="background-color: azure;">
+          <div class="row">
+            {% for item in trend %}
+            <div class="tr-item">
+                <a href="{% url 'productview' item.category.slug item.slug %}">
+                  <img src="{{ item.image.url }}" alt="" class="w-100">
+                  <p><strong>{{ item.name }}</strong></p>
+                </a>
+              </div>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-2">
+    <div class="row">
+      <div class="iben">
+        <div class="iben1">
+            <img class="w-100" src="{% static 'disc.jpg' %}" alt="">
+        </div>
+
+        <div class="iben2">
+              <div class="iben3">
+                <p><strong>At IBEN INTERNATIONAL, we’re driven by a common purpose to deliver a better world</strong></p>
+                <p>Click the button below to leave your comment</p>
+                <button class="sign"><a href="{% url 'create' %}">Comment</a></button>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+  <h5 class="text-center">OUR ENVIRONMENTAL CONCERN</h5>
+  <div class="row enviroment">    
+      <div class="col-md-4">
+      <div class="card" style="border: none;">
+        <div class="card-body">
+          <h6>Maintain Water Catchment</h6>
+          <img class="w-100" src="{% static 'mount.jpg' %}" style="height: 400px;" alt="">
+        </div>
+      </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card text-left" style="border: none;">
+            <div class="card-body">
+              <h6>Greener Environment</h6>
+              <img class="w-100" src="{% static 'forest.jpg' %}" style="height: 400px;" alt="">
+            </div>
+          </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card py-0 text-left" style="border: none;">
+            <div class="card-body">
+              <h6>Cleaner Environment</h6>
+              <img class="w-100" src="{% static 'beach.jpg' %}" style="height: 400px;" alt="">
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+    
+{% endblock %}
+    

@@ -1,0 +1,51 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container pro mt-3 mb-3">
+    <div class="row">
+        <h2 class="pro-txt">OUR PREVIOURS AND CURRENT PROJECTS</h2>
+    </div>
+</div>
+
+<div class="container-flood myproject">
+    <div class="row">
+        <h2 class="dispaly-txt">PROJECTS</h2>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+        <p class="pro-txt2">From creating new buildings and communities to enhancing public space, to engineering energy, transportation, and utility systems, our vision is to make the world a better place.</p>
+        <br>
+        <p class="pro-txt3">IBENS’s Buildings + Places practice includes architecture, building engineering, interiors, workplace master planning, urban design, economics, and portfolio advisory experts. Our team designs and delivers some of the world’s most complex and interesting projects from major sporting venues such as the London 2012 Olympic Park and Legacy Framework, to the new plan for the LA2028 Olympics, to industrial facilities for GE and Rolls-Royce, to headquarters and workplace for NASA, Unilever, Sony Music, DirecTV, Box, Inc. and many Fortune 500 companies. We integrate sustainable solutions into everything we do and approach every project with a high-performance design strategy.</p>
+    </div>
+        
+    </div>
+</div>
+
+<div class="container mt-3">
+    <h2>Our Services Include</h2>
+    <div class="row">
+    {% for item in category %}
+    <div class="col-md-3">
+        <div class="card my-cat" style="border: none;">
+            <a href="{% url 'categoryview' item.slug %}">
+            <div class="card-body">
+                <div class="category-image">
+                    <img class="w-100 img-main" src="{{item.imageURL}}" alt="">
+                </div>
+                <p class="itm-name">{{ item.name }}</p>
+            </div>
+        </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+</div>
+
+{% endblock %}
+    
